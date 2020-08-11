@@ -1,0 +1,95 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<html>
+<head>
+
+    <style>
+        body {
+            background-color: lightgray;
+        }
+
+        #myContainer {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            background: yellow;
+        }
+
+        #myAnimation {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: red;
+        }
+
+        #video {
+            position: absolute
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="text-center">
+        <h1 class="display-4">Willamette Valley Wine Guys</h1>
+        <p>Drink wine with the Wine Guys</p>
+    </div>
+
+    <!-- Add Video -->
+    <div id="video">
+        <iframe width="420" height="315"
+                src="https://www.youtube.com/watch?v=VAPbUXePmig">
+        </iframe>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <p>
+        <button onclick="myMove()">Click Me</button>
+    </p>
+
+    <div id="myContainer">
+        <div id="myAnimation"></div>
+    </div>
+
+    <script>
+        function myMove() {
+            var elem = document.getElementById("myAnimation");
+            var pos = 0;
+            var id = setInterval(frame, 10);
+            function frame() {
+                if (pos == 350) {
+                    clearInterval(id);
+                } else {
+                    pos++;
+                    elem.style.top = pos + 'px';
+                    elem.style.left = pos + 'px';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
